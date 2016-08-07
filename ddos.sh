@@ -15,7 +15,7 @@ if [ "$1" ]; then
 	fi
 	for ((i=5000; i<=8000; i++)); do
         	cat links.txt | while read line; do
-	                curl "htps://www.googleapis.com/pagespeedonline/v2/runPagespeed?url=$line?sz=$i" --limit-rate "$KBS"K -s -O /dev/null $
+	                curl "https://www.googleapis.com/pagespeedonline/v2/runPagespeed?url=$line?sz=$i" --limit-rate "$KBS"K -s -O /dev/null $
         		echo $i;
 		done
 	done
